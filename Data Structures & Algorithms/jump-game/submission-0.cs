@@ -1,0 +1,13 @@
+public class Solution {
+    public bool CanJump(int[] nums) {
+        int safeIndex = nums.Length - 1;
+
+        for(int i = nums.Length - 2; i >= 0; i--) {
+            if(i + nums[i] >= safeIndex) {
+                safeIndex = i;
+            }
+        }
+
+        return safeIndex == 0;
+    }
+}
