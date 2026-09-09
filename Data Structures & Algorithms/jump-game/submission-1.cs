@@ -1,0 +1,12 @@
+public class Solution {
+    public bool CanJump(int[] nums) {
+        int lastGoodIndex = nums.Length - 1;
+        for(int i = lastGoodIndex - 1; i >= 0; i--) {
+            if(i + nums[i] >= lastGoodIndex) {
+                lastGoodIndex = i;
+            }
+        }
+
+        return lastGoodIndex == 0 ? true : false;
+    }
+}
